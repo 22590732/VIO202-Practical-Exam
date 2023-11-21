@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Gerry & Angus</title>
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="css/style.css" />
+        <!--<script src="javascript/script.js"></script>-->
+    </head>
+    <body id="body">
+        <a href="../index.html">
+            <img src="images/plate2.png" style="width: 5%; position: fixed; left: 10px;" id="plate">
+        </a>
+
+        <a href="../index.html">
+            <p id="backToHome">BACK</p>
+        </a>
+
+        <div class="mainBody">
+            <div class="intro">
+                <img src="images/Gerry&Angus.png" id="GnA" />
+            </div>
+
+            <img src="images/GerryFall.gif" id="GerryFall" />
+
+            <div class="pancakes">
+                <!--<img src="images/image1.jpg" id="flipPan"/>-->
+                <img src="images/counterBack.png" id="counterBack" />
+                <img src="images/flip-a-cabbage.gif" id="gerryFlip" />
+                <img src="images/changePancake.svg" id="PanBtn" onclick="changeBatter()">
+            </div>
+
+            <div class="spice">
+                <img src="images/SpiceJarsScene.png" id="spicejars" />
+                <img src="images/SpiceHand.png" id="SpiceHand" />
+            </div>
+
+            <div class="VertReach">
+                <video
+                    width="960"
+                    height="auto"
+                    controls
+                    id="VertReach1"
+                    class="vertreach scrollVideo"
+                >
+                    <source src="Videos/GerryVertReach.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <!--<div><img src="images/image3.jpg" id="img3"/></div>-->
+
+            <!--<div><img src="images/image4.jpg" id="img4"/></div>-->
+            <div class="HorReach">
+                <video
+                    width="960"
+                    height="auto"
+                    controls
+                    id="HorReach1"
+                    class="vertreach scrollVideo"
+                >
+                    <source src="Videos/HorReach.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="SleepScene">
+                <video width="960" height="auto" controls id="sleep" class="scrollVideo">
+                    <source src="Videos/SleepScene.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="ResScene">
+                <video width="960" height="auto" controls id="res" class="scrollVideo">
+                    <source src="Videos/WindowRest.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="FeedScene">
+                <video width="960" height="auto" controls id="feed" class="scrollVideo">
+                    <source src="Videos/FeedAlfredo.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="FindScene">
+                <video width="960" height="auto" controls id="find" class="scrollVideo"> 
+                    <source src="Videos/GerryFound.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="AboutScene">
+                <video width="960" height="auto" controls id="about" class="scrollVideo">
+                    <source src="Videos/AboutMe.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <!--<style type="text/css">
+     #pancake {
+        z-index: 50000;
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        top: 200px;
+        left: 60vw;
+      }
+
+    #gerryFlip {
+        z-index: 50000;
+        position: absolute;
+        top: 110px;
+        left: 27vw;
+    }
+   </style>-->
+        <script type="text/javascript">
+            // import anime from 'animejs/lib/anime.es.js';
+            // const anime = require('animejs');
+
+            var GerryY = 300;
+
+
+
+            var batterNo = 0;
+            var flip = document.getElementById("gerryFlip");
+
+            function changeBatter() {
+              batterNo = batterNo + 1;
+
+              if (batterNo > 4) {
+                batterNo = 0;
+              }
+
+              if (batterNo == 0) {
+                flip.setAttribute("src", "images/flip-a-cabbage.gif");
+              }
+              else if (batterNo == 1) {
+                flip.setAttribute("src", "images/flip-a-chef.gif");
+              }
+              else if (batterNo == 2) {
+                flip.setAttribute("src", "images/flip-a-thief.gif");
+              }
+              else if (batterNo == 3) {
+                flip.setAttribute("src", "images/flip-a-small.gif");
+              }
+              else if (batterNo == 4) {
+                flip.setAttribute("src", "images/flip-a-fragile.gif");
+              }
+            }
+
+            let SpiceHand = document.getElementById('SpiceHand');
+            let bodyTag = document.getElementById('body');
+            let Gerry = document.getElementById('GerryFall');
+            const onMouseMove = (e) => {
+                if (e.pageX < 200 || e.pageX > 700) {
+                } else {
+                    SpiceHand.style.left = e.pageX + 'px';
+                }
+                //constrain( SpiceHand.style.left, SpiceHand.style.left - 200, SpiceHand.style.left + 200)
+                //SpiceHand.style.left = e.pageX + 'px';
+            };
+
+            document.addEventListener('mousemove', onMouseMove);
+
+            document.addEventListener("scroll", function() {
+              console.log("working");
+
+              if (window.scrollY > 4200) {
+                //console.log("above");
+                // bodyTag.style.background = 'linear-gradient(180deg, rgba(255, 181, 69, 0) -74.86%, #88500D 86.3%)';
+                bodyTag.style.background = 'radial-gradient(46.11% 63.84% at 50% 33.66%, rgba(255, 119, 119, 0.56) 0%, #880D0D 100%)';
+                Gerry.setAttribute("src", "images/GerryDead.svg");
+              }
+              else {
+                //console.log("below");
+                bodyTag.style.background = 'radial-gradient(70.37% 70.37% at 50% 48.61%, #A6FF87 0%, #155000 100%)';
+                Gerry.setAttribute("src", "images/GerryFall.svg");
+              }
+            });
+
+            function scrollTrigger(selector, options = {}) {
+                let els = document.querySelectorAll(selector);
+                console.log(els);
+                els = Array.from(els);
+                els.forEach((el) => {
+                    //console.log('adding observer');
+                    addObserver(el, options);
+                });
+            }
+
+            function addObserver(el, options) {
+                if (!('IntersectionObserver' in window)) {
+                    if (options.cb) {
+                        //console.log('top options');
+                        options.cb(el);
+                    } else {
+                        //console.log('adding active');
+                        entry.target.classList.add('active');
+                    }
+                    return;
+                }
+
+                let observer = new IntersectionObserver((entries, observer) => {
+                    //this takes a callback function which receives two arguments: the elemts list and the observer instance
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            if (options.cb) {
+                                //console.log('bot options');
+                                options.cb(el);
+                            } else {
+                                console.log('adding active 2');
+                                entry.target.classList.add('active');
+                            }
+                            //console.log('unobserving');
+
+                            // observer.unobserve(entry.target);
+                        } else {
+                            if (options.resetcb) {
+                                options.resetcb(el);
+                            }
+                        }
+                    });
+                }, options);
+                observer.observe(el);
+            }
+
+            scrollTrigger('.scrollVideo', {
+                rootMargin: '-300px',
+                cb: function (el) {
+                    el.play();
+                },
+                resetcb: function (el) {
+                    el.load();
+                },
+            });
+
+            // Example usages:
+            // scrollTrigger('.intro-text')
+
+            // scrollTrigger('.scroll-reveal', {
+            //     rootMargin: '-200px',
+            // })
+
+            // scrollTrigger('.loader', {
+            //     rootMargin: '-200px',
+            //     cb: function(el){
+            //         el.innerText = 'Loading...'
+            //         setTimeout(() => {
+            //             el.innerText = 'Task Complete!'
+            //         }, 1000)
+            //     }
+            // })
+        </script>
+    </body>
+</html>

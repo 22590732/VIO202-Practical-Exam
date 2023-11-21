@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Nicolaas Johan Jansen van Rensburg">
+  <title>Johan Jansen van Rensburg Portfolio</title>
+  <style type="text/css">
+    body {
+      background-image: url('comicBackG.jpg');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-attachment: fixed;
+      text-align: center;
+    }
+
+    p {
+      color: white;
+    }
+
+    a:hover {
+      color: #333;
+    }
+
+    a {
+      font-size: 42pt;
+      color: black;
+      text-shadow: 5px 5px 5px #222;
+      background-image: url("btnBackG.png");
+          background-size: 100% 100%;
+    }
+
+    video {
+      margin-bottom: 5em;
+    }
+
+    #playPage1>p:hover {
+      color: red;
+    }
+
+    #comic {
+      height: 600px;
+    }
+
+    #back {
+      padding: 0%;
+      position: fixed;
+      width: 15%;
+      height: 13%;
+      top: 78%;
+      left: 15%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("BreadBack.png");
+      background-size: 100%, 100%;
+      background-repeat: no-repeat;
+    }
+
+    #back:hover #backText {
+      color: red;
+    }
+
+    #backText {
+      height: auto;
+      width: auto;
+      color: black;
+      position: relative;
+      z-index: 2;
+      font-size: 36pt;
+    }
+
+    #next {
+      padding: 0%;
+      position: fixed;
+      width: 15%;
+      height: 13%;
+      top: 78%;
+      left: 70%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("BreadBack.png");
+      background-size: 100%, 100%;
+      background-repeat: no-repeat;
+    }
+
+    #next:hover #nextText {
+      color: red;
+    }
+
+    #nextText {
+      height: auto;
+      width: auto;
+      color: black;
+      position: relative;
+      z-index: 2;
+      font-size: 42pt;
+    }
+    .btn {
+          background-image: url("btnBackG.png");
+          background-size: 100% 100%;
+          border-radius: 15px;
+          color: black;
+          margin-right: 1%;
+          margin-top: 1%;
+          text-decoration: none;
+          padding: 1%;
+        }
+
+        .btn:hover {
+          background-image: url("btnBackG2.png");
+          color: white;
+        }
+  </style>
+  <!--<script type="text/javascript">
+    let playPage1 = document.getElementById("playPage1");
+	let Page1Audio = document.getElementById("page1Audio");
+
+	playPage1.addEventListener("click", p1);
+
+	function p1() {
+	  Page1Audio.play();
+	  //console.log("the button works");
+	  // playPage1.on("complete", start);
+	}
+  </script>-->
+</head>
+<body>
+	<div style="display: flex; justify-content: space-between;">
+    	<p style="font-size: 42pt; margin: 0; color: red;">Interactive comic</p>
+    	<a href="index.html" class="btn">Go back</a>
+  	</div>
+
+	<div style="display: flex; justify-content: center;" id="comic">
+		<img src="PageCover.svg" style="width: 100%;" id="PageCover">
+		<!--<img src="Page2.png" style="width: 282px; position: absolute; height: 408px; top: 70px;">-->
+		<!--<img src="Page2.gif" style="width: 282px; position: absolute; height: 408px; top: 70px;">-->
+		<!--<img src="Page3.jpg" style="width: 282px; position: absolute; height: 408px; top: 70px;">-->
+		<!--<img src="Page3.gif" style="width: 282px; position: absolute; height: 408px; top: 70px;">-->
+		<!--<img src="Page1.gif" style="position: absolute;">-->
+	</div>
+  
+  	<audio preload="auto" id="page1Audio">
+    	<source src="Page1.mp3" type="audio/mpeg">
+    	Page1
+  	</audio>
+
+  	<audio preload="auto" id="page2Audio">
+    	<source src="Page2.mp3" type="audio/mpeg">
+    	Page2
+  	</audio>
+
+  	<audio preload="auto" id="page3Audio">
+    	<source src="Page3.mp3" type="audio/mpeg">
+    	Page3
+  	</audio>
+
+    <audio preload="auto" id="page4Audio">
+      <source src="Page4.mp3" type="audio/mpeg">
+      Page3
+    </audio>
+
+    <audio preload="auto" id="page5Audio">
+      <source src="Page5.mp3" type="audio/mpeg">
+      Page3
+    </audio>
+
+  	<div id="back">
+  		<p id="backText">Back</p>
+  	</div>
+
+  	<div id="next">
+    	<p id="nextText">Next</p>
+  	</div>
+  	<script src="script.js"></script>
+</body>
+</html>
